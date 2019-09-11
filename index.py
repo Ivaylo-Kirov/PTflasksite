@@ -11,6 +11,10 @@ def index():
 def about(name=None):
     return render_template('about.html', name=name)
 
+@app.route('/posts')
+def posts():
+    return render_template('posts.html', posts=[{'id': '1', 'info': 'blah'}, {'id': '2', 'info': 'blah blah'}])
+
 @app.route('/api')
 def api():
     responseData = {
